@@ -6,3 +6,4 @@
 
 NOBUILD/
 data/.assemb_data
+.travis.yml

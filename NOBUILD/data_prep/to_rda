@@ -1,4 +1,4 @@
-#/usr/bin/Rscript --no-save
+#!/usr/bin/Rscript --no-save
 
 orig <- read.table('yhs.hash.gz', header=TRUE)
 orig$src <- "orig"
@@ -8,4 +8,4 @@ supp$src <- "supp"
 
 yhs <- rbind(orig, supp)
 
-save(yhs, file='yhs.rda', compress=TRUE)
+save(yhs, file='yhs.rda', compress='xz')
