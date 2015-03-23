@@ -3,6 +3,7 @@
 #' @description Provides access to the Yang, Hauksson, and Shearer (2012) catalog
 #' of focal mechanisms for southern California.
 #' 
+#' @import dplyr
 #' @docType package
 #' @author A.J. Barbour
 #' @name yhs.catalog
@@ -38,7 +39,8 @@ NULL
 #' @name yhs
 #' @aliases ysh
 #' 
-#' @format A \code{data.frame} with 193071 data points in the HASH format: 
+#' @format Classes \code{'tbl_df'}, \code{'tbl'} and \code{'data.frame'}:  
+#' 193071 obs. of  22 variables in the HASH format: 
 #' 179255 earthquakes from the original catalog, and 13816 from the supplemental catalog.
 #' 
 #' @source SCEC: \url{http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html}
@@ -57,7 +59,8 @@ NULL
 #' 
 #' @seealso \code{\link{yhs.catalog}}
 #' @examples
-#' data(yhs)
+#' require(dplyr)
+#' print(yhs)
 #' 
 #' # source and quality distribution
 #' print(tbl <- with(yhs, table(src, Quality)))

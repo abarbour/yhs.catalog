@@ -1,11 +1,13 @@
 #!/usr/bin/Rscript --no-save
 
+library(dplyr)
+
 orig <- read.table('yhs.hash.gz', header=TRUE)
 orig$src <- "orig"
 
 supp <- read.table('yhs_supp.hash.gz', header=TRUE)
 supp$src <- "supp"
 
-yhs <- rbind(orig, supp)
+yhs <- as.tbl(rbind(orig, supp))
 
 save(yhs, file='yhs.rda', compress='xz')

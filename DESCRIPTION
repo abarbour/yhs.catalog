@@ -1,12 +1,13 @@
 Package: yhs.catalog
 Type: Package
-Title: Yang, Hauksson, and Shearer (2011) Refined Focal Mechanism Catalog
-Version: 1.0
+Title: Yang, Hauksson, and Shearer (2012) Refined Focal Mechanism Catalog
+Version: 1.0-201503
 Date: 2015-03-23
 Author: Andrew J Barbour
 Maintainer: Andrew J Barbour <andy.barbour@gmail.com>
-Description: Provides access to the Yang, Hauksson, and Shearer focal mechanism catalog
+Description: Provides access to the Yang, Hauksson, and Shearer focal mechanism catalog from the SCEC database
 License: GPL-3
 LazyData: true
-URL: https://github.com/abarbour/ysh.catalog/
+Imports: dplyr
+URL: https://github.com/abarbour/ysh.catalog/, SCEC database: http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
 BugReports: https://github.com/abarbour/ysh.catalog/issues
