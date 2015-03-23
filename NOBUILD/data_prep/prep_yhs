@@ -1,0 +1,81 @@
+#!/bin/sh
+set -e
+#
+# setup a header to append to
+#
+cat << XX
+#
+#	.hash format seismic catalog
+#
+#	updated on	`date`
+#
+#
+#	Yang, Hauksson and Shearer:
+#	Refined earthquake focal mechanism catalog for southern California (1981 - 2010)
+#
+#
+#	A refined earthquake focal mechanism catalog for southern Califiornia using the 
+#	HASH method and locations derived from waveform cross-correlation. Each focal 
+#	mechanism is obtained from grid searching for the best-fitting double-couple 
+#	focal mechanism solution to both the P-wave first motion records that were 
+#	picked by network analysts, and the S/P amplitude ratios computed from 
+#	three-component seismograms. This dataset includes around 179,000 focal 
+#	mechanisms for earthquakes occurring 1981 through 2010 in southern California region.
+#
+#
+#	REFERENCES:
+#
+#	Yang, W., E. Hauksson and P. M. Shearer,Computing a Large Refined Catalog of Focal 
+#	Mechanisms for Southern California (1981 – 2010): Temporal Stability of the Style 
+#	of Faulting, Bull. Seism. Soc. Am., Vol. 102, 1179-1194. 2012.
+#
+#	Hauksson E., W. Yang and P. M. Shearer, Waveform relocated earthquake catalog for 
+#	southern California (1981 - 2011), Bull. Seism. Soc. Am., Vol. 102, 2239-2244, 2012.
+#
+#
+#	DATA FORMAT:
+#
+#1981	Year
+#1	Month
+#1	Day
+#4	Hour
+#13	Minute
+#55.710	Second
+#3301565	CID
+#33.25517	Latitude (Degree)
+#-115.96750	Longitude (Degree)
+#5.680	Depth (km)
+#2.260	Magnitude
+#318	Strike
+#57	Dip
+#-168	Rake
+#37	Fault Plane Uncertainty
+#39	Auxiliary Fault Plane Uncertainty
+#18	Number of P wave First Motions
+#0.17	Misfit of First Motions
+#0	Number of S/P amplitude ratios
+#0.00	average log10(S/P amplitude ratio) misfit
+#C	Quality of focal mechanism
+#
+Year \
+Month \
+Day \
+Hour \
+Minute \
+Second \
+CID \
+Lat.deg \
+Lon.deg \
+Dep.km \
+Mw \
+Strike \
+Dip \
+Rake \
+FP.uncert \
+AuxFP.uncert \
+n.fm \
+fm.misfit \
+n.sp \
+sp.logmisfit \
+Quality
+XX

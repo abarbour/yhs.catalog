@@ -1,0 +1,9 @@
+Package: yhs.catalog
+Type: Package
+Title: Yang, Hauksson, and Shearer (2011) Refined Focal Mechanism Catalog
+Version: 1.0
+Date: 2015-03-23
+Author: Andrew J Barbour
+Maintainer: Andrew J Barbour <andy.barbour@gmail.com>
+Description: Provides access to the Yang, Hauksson, and Shearer focal mechanism catalog
+License: GPL (>=2)

@@ -1,0 +1,3 @@
+#!/bin/sh
+DATLOC="../NOBUILD/data_prep"
+cp ${DATLOC}/yhs.rda .
