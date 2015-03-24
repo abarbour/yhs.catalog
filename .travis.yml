@@ -1,13 +1,12 @@
-# Sample .travis.yml for R projects.
-#
-# See README.md for instructions, or for more configuration options,
+# .travis.yml for R projects.
 # see the wiki:
 #   https://github.com/craigcitro/r-travis/wiki
-
 # modified from psd
 
 # this is a temporary hack at a solution, until R is supported by Travis
 language: c
+
+sudo: required
 
 env:
   global:
@@ -27,7 +26,6 @@ before_install:
 install:
   - ./travis-tool.sh install_aptget r-cran-runit 
   - ./travis-tool.sh install_r dplyr
-#  - ./travis-tool.sh install_github hadley/devtools
 
 script: 
   - ./travis-tool.sh run_tests

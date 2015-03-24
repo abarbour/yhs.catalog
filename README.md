@@ -25,11 +25,25 @@ Tabulate classifications:
 
     with(yhs, table(src, Quality))
 
-Plot in spatial coordinates:
+Plot in spatial coordinates by year:
 
-    plot(Lat.deg ~ Lon.deg, yhs, pch=".")
-    
-    # highlight the 'supplemental' subset in red
-    plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(src)))
+    library(ggplot2)
+    print( p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) + 
+                geom_point(shape='.', aes(colour=Mw)) + 
+                coord_map() + 
+                facet_wrap(~Year) + 
+                scale_colour_gradientn(colours=(topo.colors(4)))+
+                theme_minimal() +
+                theme(axis.text = element_text(size=7),
+                      axis.title = element_text(size=10, hjust=0),
+                      plot.title = element_text(size=12,face="bold"),
+                      legend.position=c(0.73,0.06),
+                      legend.direction="horizontal") +
+                xlab("Longitude") + 
+                ylab("Latitude") +
+                ggtitle("Earthquakes in Southern California") )
+
+![alt text][years]
 
 [yhs]: http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
+[years]: NOBUILD/readme/years.png "Earthquakes by year"
