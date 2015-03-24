@@ -21,13 +21,15 @@ Inspect the data:
     class(yhs)
     str(yhs)
     
-    # plot in space
+Tabulate classifications:
+
+    with(yhs, table(src, Quality))
+
+Plot in spatial coordinates:
+
     plot(Lat.deg ~ Lon.deg, yhs, pch=".")
     
     # highlight the 'supplemental' subset in red
     plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(src)))
-
-    # table if classifications
-    with(yhs, table(src, Quality))
 
 [yhs]: http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
