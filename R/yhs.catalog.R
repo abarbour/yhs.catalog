@@ -3,7 +3,7 @@
 #' @description Provides access to the Yang, Hauksson, and Shearer (2012) catalog
 #' of focal mechanisms for southern California.
 #' 
-#' @import dplyr
+#' @importFrom dplyr as.tbl
 #' @docType package
 #' @author A.J. Barbour
 #' @name yhs.catalog

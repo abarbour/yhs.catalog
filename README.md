@@ -1,7 +1,7 @@
 ---
 output:
   html_document:
-    theme: flatly
+    theme: spacelab
 ---
 # ysh.catalog [![Build Status](https://travis-ci.org/abarbour/ysh.catalog.svg?branch=master)](https://travis-ci.org/abarbour/ysh.catalog) [![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
 
@@ -25,5 +25,11 @@ Inspect the data:
 
     class(yhs)
     str(yhs)
+    
+    # plot in space
+    plot(Lat.deg ~ Lon.deg, yhs, pch=".")
+    
+    # highlight the 'supplemental' subset in red
+    plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(src)))
 
 [yhs]: http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
