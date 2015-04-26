@@ -72,3 +72,28 @@ NULL
 #' # highlight the supplemental catalog in red
 #' plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(src)))
 NULL
+
+#' @title Salton Sea polygon
+#' 
+#' @description Coordinates of the current Salton Sea shoreline
+#' 
+#' @details The first and last coordinates are equal, which means this can be treated as a polygon.
+#' 
+#' @docType data
+#' @name saltonsea
+#' 
+#' @format \code{'data.frame'}: latitudes and longitudes outlining the shoreline
+#' 
+#' @source Digitized from Google-maps in Feb-2015 with \url{http://www.birdtheme.org/useful/v3largemap.html}
+#' @references For more information on the Salton Sea:
+#' @references \url{http://saltonsea.ca.gov/}
+#' @references \url{http://en.wikipedia.org/wiki/Salton_Trough}
+#' 
+#' @seealso \code{\link{yhs.catalog}}
+#' @examples
+#' plot(saltonsea, type='l', asp=1.19)
+#' points(Lat.deg ~ Lon.deg, yhs, pch=".")
+#' 
+#' # first and last points are equal -- this is a polygon
+#' try(identical(c(saltonsea[1,]), c(saltonsea[nrow(saltonsea),])))
+NULL

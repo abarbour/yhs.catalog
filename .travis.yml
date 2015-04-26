@@ -7,6 +7,7 @@
 # modified from psd
 
 # this is a temporary hack at a solution, until R is supported by Travis
+# [ ] soon: http://docs.travis-ci.com/user/languages/r/
 language: c
 
 env:
@@ -26,7 +27,9 @@ before_install:
 
 install:
   - ./travis-tool.sh install_aptget r-cran-runit 
+  - ./travis-tool.sh install_r magrittr
   - ./travis-tool.sh install_r dplyr
+  - ./travis-tool.sh install_r maps
 #  - ./travis-tool.sh install_github hadley/devtools
 
 script: 
