@@ -7,6 +7,6 @@
   ##
   pack <- "yhs.catalog"
   packageStartupMessage(
-    sprintf("Loaded %s (%s) -- Yang, Hauksson, and Shearer focal mechanism catalog", 
+    sprintf("Loaded %s (%s) -- refined focal mechanism catalog for southern California", 
             pack, utils::packageVersion(pack)))
 }

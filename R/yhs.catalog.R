@@ -29,7 +29,7 @@
 #' plot(Lat.deg ~ Lon.deg, yhs, pch=".")
 NULL
 
-#' @title Yang, Hauksson, and Shearer refined focal mechanism catalog
+#' @title Yang, Hauksson, and Shearer refined focal mechanism catalog for southern California
 #' 
 #' @details This dataset consists of the original catalog and a supplement. These can be
 #' identified with the \code{src} field: \code{src=='orig'} for the original
