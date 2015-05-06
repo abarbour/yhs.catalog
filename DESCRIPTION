@@ -1,16 +1,17 @@
 Package: yhs.catalog
 Type: Package
 Title: Yang, Hauksson, and Shearer (2012) Refined Focal Mechanism Catalog for Southern California
-Version: 1.0-201503
-Date: 2015-03-27
+Version: 1.1-201503
+Date: 2015-04-26
 Author: Andrew J Barbour
 Maintainer: Andrew J Barbour <andy.barbour@gmail.com>
 Description: Provides access to Yang, Hauksson, and Shearer's refined focal mechanism catalog for southern California, from the SCEC database
 License: GPL-3
 LazyData: true
-Imports: 
-    dplyr
+Depends: magrittr
+Imports: dplyr
 Suggests: 
+    maps,
     ggplot2
 URL: https://github.com/abarbour/ysh.catalog/, SCEC database: http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
 BugReports: https://github.com/abarbour/ysh.catalog/issues

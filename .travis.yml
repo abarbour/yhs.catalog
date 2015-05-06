@@ -1,5 +1,5 @@
-# Sample .travis.yml for R projects from https://github.com/craigcitro/r-travis
-
+# this is a temporary hack at a solution, until R is supported by Travis
+# [ ] soon: http://docs.travis-ci.com/user/languages/r/
 language: c
 sudo: required
 
