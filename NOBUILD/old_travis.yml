@@ -1,0 +1,45 @@
+# .travis.yml for R projects.
+# see the wiki:
+#   https://github.com/craigcitro/r-travis/wiki
+# modified from psd
+
+# this is a temporary hack at a solution, until R is supported by Travis
+# [ ] soon: http://docs.travis-ci.com/user/languages/r/
+language: c
+
+sudo: required
+
+env:
+  global:
+    # set to force failure with warnings
+    #- WARNINGS_ARE_ERRORS=1
+    - _R_CHECK_FORCE_SUGGESTS_=0
+    - BOOTSTRAP_LATEX=1
+    - R_BUILD_ARGS="--no-build-vignettes --no-manual"
+    - R_CHECK_ARGS="--no-build-vignettes --no-manual --as-cran"
+    - CRAN="http://cran.us.r-project.org"
+
+before_install:
+  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
+  - chmod 755 ./travis-tool.sh
+  - ./travis-tool.sh bootstrap
+
+install:
+  - ./travis-tool.sh install_aptget r-cran-runit 
+  - ./travis-tool.sh install_r magrittr
+  - ./travis-tool.sh install_r dplyr
+  - ./travis-tool.sh install_r maps
+  - ./travis-tool.sh install_r ggplot2
+  - ./travis-tool.sh install_r dplyr
+
+script: 
+  - ./travis-tool.sh run_tests
+
+after_failure:
+  - ./travis-tool.sh dump_logs
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
