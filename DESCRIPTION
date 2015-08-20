@@ -8,8 +8,9 @@ Maintainer: Andrew J Barbour <andy.barbour@gmail.com>
 Description: Provides access to Yang, Hauksson, and Shearer's refined focal mechanism catalog for southern California, from the SCEC database
 License: GPL-3
 LazyData: true
-Depends: magrittr
-Imports: dplyr
+Imports: 
+    dplyr,
+    magrittr
 Suggests: 
     maps,
     ggplot2

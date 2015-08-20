@@ -3,3 +3,6 @@
 export(prep_for_fmc)
 export(salton_trough_yhs)
 importFrom(dplyr,as.tbl)
+importFrom(magrittr,"%>%")
+importFrom(utils,head)
+importFrom(utils,tail)

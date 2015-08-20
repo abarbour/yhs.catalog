@@ -1,5 +1,5 @@
 #' Prepare for use with Focal Mechanism Classification
-#' @param Catalog the seismic catalog to use
+# @param Catalog the seismic catalog to use
 #' @param type character; the final format
 #' @references url
 #' @export
@@ -10,9 +10,9 @@ prep_for_fmc <- function(type=NULL){
     do.call("data", list('yhs', envir=env))
     yhs <- get('yhs', envir = env)
   }
-  require(dplyr)
   if (type=='x'){
-    yhs %>% transmute(Lat.deg, Lon.deg)
+    Lat.deg <- Lat.deg <- NULL
+    yhs %>% dplyr::transmute(Lat.deg, Lon.deg)
   } else {
     yhs
   }

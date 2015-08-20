@@ -8,8 +8,6 @@ prep_for_fmc(type = NULL)
 }
 \arguments{
 \item{type}{character; the final format}
-
-\item{Catalog}{the seismic catalog to use}
 }
 \description{
 Prepare for use with Focal Mechanism Classification
