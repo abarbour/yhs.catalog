@@ -4,6 +4,7 @@
 #' @references url
 #' @export
 prep_for_fmc <- function(type=NULL){
+  Lat.deg <- Lon.deg <- NULL
   type <- match.arg(type, c('x'))
   if (!exists('yhs')){
     env <- new.env()
@@ -11,7 +12,6 @@ prep_for_fmc <- function(type=NULL){
     yhs <- get('yhs', envir = env)
   }
   if (type=='x'){
-    Lat.deg <- Lat.deg <- NULL
     yhs %>% dplyr::transmute(Lat.deg, Lon.deg)
   } else {
     yhs
