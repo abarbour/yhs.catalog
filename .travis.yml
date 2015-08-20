@@ -5,9 +5,9 @@ sudo: required
 
 warnings_are_errors: false
 
-apt_packages:
- - libcurl4-openssl-dev
- - libxml2-dev
+#apt_packages:
+# - libcurl4-openssl-dev
+# - libxml2-dev
  
 r_binary_packages:
  - magrittr
@@ -15,10 +15,13 @@ r_binary_packages:
  - maps
  - ggplot2
 
-after_failure:
-  - ./travis-tool.sh dump_logs
+r_github_packages:
+  - jimhester/covr
 
 notifications:
   email:
     on_success: change
     on_failure: change
+
+after_success:
+  - Rscript -e 'covr::codecov()'
