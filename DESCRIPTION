@@ -5,7 +5,8 @@ Version: 1.2-201503
 Date: 2015-08-19
 Author: Andrew J Barbour
 Maintainer: Andrew J Barbour <andy.barbour@gmail.com>
-Description: Provides access to Yang, Hauksson, and Shearer's refined focal mechanism catalog for southern California, from the SCEC database
+Description: Provides access to Yang, Hauksson, and Shearer's refined focal mechanism catalog for 
+  southern California, from the SCEC database; this will be updated as new results become available.
 License: GPL-3
 LazyData: true
 Imports: 
