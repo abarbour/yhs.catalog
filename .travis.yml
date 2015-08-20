@@ -1,6 +1,7 @@
 #http://docs.travis-ci.com/user/languages/r/
 
 language: r
+sudo: required
 
 warnings_are_errors: false
 
@@ -8,3 +9,11 @@ warnings_are_errors: false
  - dplyr
  - maps
  - ggplot2
+
+after_failure:
+  - ./travis-tool.sh dump_logs
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change

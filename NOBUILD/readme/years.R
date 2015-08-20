@@ -10,10 +10,15 @@
 
 library(yhs.catalog)
 library(ggplot2)
+library(maps)
 
-print( p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) + 
-			geom_point(shape='.', aes(colour=Mw)) + 
-			coord_map() + 
+calif <- map_data("state", region = 'california')
+
+p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) + 
+      geom_path(data=calif, aes(x=long, y=lat, group = group), colour="grey")+
+      geom_path(data=saltonsea, aes(x=Lon.deg, y=Lat.deg), colour="grey")+
+      geom_point(shape='.', aes(colour=Mw)) + 
+			coord_quickmap() + 
 			facet_wrap(~Year) + 
 			scale_colour_gradientn(colours=(topo.colors(4)))+
 			theme_minimal() +
@@ -23,8 +28,12 @@ print( p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) +
 				  legend.position=c(0.73,0.06),
 				  legend.direction="horizontal"
 				  ) +
+			xlim(-123,-114)+
+			ylim(31,37)+
 			xlab("Longitude") + 
 			ylab("Latitude") +
-			ggtitle("Earthquakes in Southern California") )
+			ggtitle("Earthquakes in Southern California")
 			
-ggsave("years.png", p, width=7.0, height=9, dpi=450)
+ggsave("years.png", p, width=7.0, height=7.0, dpi=450)
+
+print(p)
