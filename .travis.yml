@@ -10,10 +10,11 @@ warnings_are_errors: false
 # - libxml2-dev
  
 r_binary_packages:
- - magrittr
  - dplyr
- - maps
  - ggplot2
+ - magrittr
+ - maps
+ - testthat
 
 r_github_packages:
   - jimhester/covr

@@ -13,7 +13,8 @@ Imports:
     dplyr,
     magrittr
 Suggests: 
+    ggplot2,
     maps,
-    ggplot2
+    testthat
 URL: https://github.com/abarbour/ysh.catalog/, SCEC database: http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
 BugReports: https://github.com/abarbour/ysh.catalog/issues
