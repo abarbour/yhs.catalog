@@ -1,17 +1,17 @@
-# yhs.catalog [![Build Status](https://travis-ci.org/abarbour/yhs.catalog.svg?branch=master)](https://travis-ci.org/abarbour/yhs.catalog) [![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
+# yhs.catalog [![Build Status](https://travis-ci.org/abarbour/yhs.catalog.svg?branch=master)](https://travis-ci.org/abarbour/yhs.catalog) [![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
 
 This is an R package which bundles
-the Yang, Hauksson, and Shearer (2012) [refined focal mechanism catalog][yhs]
+the Yang, Hauksson, and Shearer (2012) [relocated focal mechanism catalog][yhs]
 together. 
 
 A note on the version number: the patch version represents the year and month the dataset
-was assembled (e.g. 201503 is March 2015).
+was last updated (e.g. 201503 is March 2015).
 
 ## Example ##
 
 Install the package:
 
-    if (!require(devtools)) install.packages("devtools", dependencies=TRUE)
+    if (!require(devtools)) install.packages("devtools")
     require(devtools)
     install_github("abarbour/yhs.catalog")
 
@@ -32,11 +32,9 @@ Tabulate classifications:
 Plot in spatial coordinates by year:
 
     library(ggplot2)
-	library(maps)
-
-	calif <- map_data("state", region = 'california')
-
-	print(p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) + 
+    library(maps)
+    calif <- map_data("state", region = 'california')
+    print(p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) + 
 			geom_path(data=calif, aes(x=long, y=lat, group = group), colour="grey") +
 			geom_path(data=saltonsea, aes(x=Lon.deg, y=Lat.deg), colour="grey") +
 			geom_point(shape='.', aes(colour=Mw)) + 
