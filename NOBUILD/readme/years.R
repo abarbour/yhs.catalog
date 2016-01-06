@@ -11,6 +11,7 @@
 library(yhs.catalog)
 library(ggplot2)
 library(maps)
+library(viridis)
 
 calif <- map_data("state", region = 'california')
 
@@ -20,12 +21,13 @@ p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) +
       geom_point(shape='.', aes(colour=Mw)) + 
 			coord_quickmap() + 
 			facet_wrap(~Year) + 
-			scale_colour_gradientn(colours=(topo.colors(4)))+
+      #scale_colour_gradientn(colours=(topo.colors(4)))+
+      scale_colour_gradientn(colours=rev(viridis(7)))+
 			theme_minimal() +
 			theme(axis.text = element_text(size=7),
 				  axis.title = element_text(size=10, hjust=0),
 				  plot.title = element_text(size=12,face="bold"),
-				  legend.position=c(0.73,0.06),
+				  legend.position=c(0.83,0.06),
 				  legend.direction="horizontal"
 				  ) +
 			xlim(-123,-114)+

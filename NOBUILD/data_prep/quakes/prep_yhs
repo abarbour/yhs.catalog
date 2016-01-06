@@ -22,6 +22,8 @@ cat << XX
 #	three-component seismograms. This dataset includes around 179,000 focal 
 #	mechanisms for earthquakes occurring 1981 through 2010 in southern California region.
 #
+#	source:
+#		http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
 #
 #	REFERENCES:
 #
