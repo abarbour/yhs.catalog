@@ -12,8 +12,7 @@ was last updated (e.g. 201503 is March 2015).
 Install the package:
 
     if (!require(devtools)) install.packages("devtools")
-    require(devtools)
-    install_github("abarbour/yhs.catalog")
+    devtools::install_github("abarbour/yhs.catalog")
 
 Load the package (lazy loading is enabled, so datasets are
 attached by default):
@@ -33,6 +32,7 @@ Plot in spatial coordinates by year:
 
     library(ggplot2)
     library(maps)
+    library(viridis)
     calif <- map_data("state", region = 'california')
     print(p <- ggplot(yhs, aes(x=Lon.deg, y=Lat.deg)) + 
 			geom_path(data=calif, aes(x=long, y=lat, group = group), colour="grey") +
@@ -40,12 +40,12 @@ Plot in spatial coordinates by year:
 			geom_point(shape='.', aes(colour=Mw)) + 
 			coord_quickmap() + 
 			facet_wrap(~Year) + 
-			scale_colour_gradientn(colours=(topo.colors(4)))+
+			scale_colour_gradientn(colours=rev(viridis(7)))+
 			theme_minimal() +
 			theme(axis.text = element_text(size=7),
 				  axis.title = element_text(size=10, hjust=0),
 				  plot.title = element_text(size=12,face="bold"),
-				  legend.position=c(0.73,0.06),
+				  legend.position=c(0.83,0.06),
 				  legend.direction="horizontal") +
 			xlim(-123,-114) +
 			ylim(31,37) +
