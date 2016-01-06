@@ -6,10 +6,13 @@
 \alias{ysh}
 \title{Yang, Hauksson, and Shearer refined focal mechanism catalog for southern California}
 \format{Classes \code{'tbl_df'}, \code{'tbl'} and \code{'data.frame'}:  
-193071 obs. of  22 variables in the HASH format: 
-179255 earthquakes from the original catalog, and 13816 from the supplemental catalog.}
+196993 obs. of  22 variables in the HASH format: 
+179255 earthquakes from the original catalog, and 17738 from the supplemental catalogs.}
 \source{
 SCEC: \url{http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html}
+}
+\description{
+This is the dataset containing the earthquake catalog.
 }
 \details{
 This dataset consists of the original catalog and a supplement. These can be
