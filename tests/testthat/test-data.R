@@ -4,7 +4,7 @@ data(yhs)
 yhs.sub <- salton_trough_yhs()
 
 test_that('class is tbl_df',{
-	expect_is(yhs, 'tbl_df')
+  expect_is(yhs, 'tbl_df')
   expect_is(yhs.sub, 'tbl_df')
 })
 
