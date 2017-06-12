@@ -15,9 +15,7 @@ r_binary_packages:
  - magrittr
  - maps
  - testthat
-
-r_github_packages:
-  - jimhester/covr
+ - covr
 
 notifications:
   email:

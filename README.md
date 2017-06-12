@@ -1,4 +1,5 @@
-# yhs.catalog [![Build Status](https://travis-ci.org/abarbour/yhs.catalog.svg?branch=master)](https://travis-ci.org/abarbour/yhs.catalog) [![License](http://img.shields.io/badge/license-GPL%203-brightgreen.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
+# yhs.catalog [![Build Status](https://travis-ci.org/abarbour/yhs.catalog.svg?branch=master)](https://travis-ci.org/abarbour/yhs.catalog) [![License](http://img.shields.io/badge/license-GPL%203-red.svg)](http://www.gnu.org/licenses/gpl-3.0.html) [![DOI](https://zenodo.org/badge/1277/abarbour/yhs.catalog.svg)](https://zenodo.org/badge/latestdoi/1277/abarbour/yhs.catalog)
+
 
 This is an R package which bundles
 the Yang, Hauksson, and Shearer (2012) [relocated focal mechanism catalog][yhs]
