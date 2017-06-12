@@ -49,4 +49,3 @@ Bull. Seismol. Soc. Am., 93(6), 2003.
 \seealso{
 \code{\link{yhs.catalog}}
 }
-
