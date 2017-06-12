@@ -1,4 +1,0 @@
-#!/bin/sh
-DATLOC="../NOBUILD/data_prep"
-cp ${DATLOC}/quakes/yhs.rda .
-cp ${DATLOC}/sea/saltonsea.rda .
