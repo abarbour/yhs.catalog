@@ -29,7 +29,7 @@ Tabulate classifications:
 
     with(yhs,{
         Tsr <- table(Source, Quality)
-	Tyr <- table(Year, Quality)
+        Tyr <- table(Year, Quality)
     })
     plot(Tsr)
     plot(Tyr)
