@@ -4,6 +4,7 @@
 .git/
 .gitignore
 
-NOBUILD/
-data/.assemb_data
-.travis.yml
+^NOBUILD$
+^\.travis\.yml$
+^codecov\.yml$
+^data-raw$

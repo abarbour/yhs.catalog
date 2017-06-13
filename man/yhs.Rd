@@ -34,7 +34,7 @@ plot(tbl2)
 plot(Lat.deg ~ Lon.deg, yhs, pch=".")
 
 # highlight the supplemental catalog in red
-plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(src)))
+plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(Source)))
 }
 \references{
 HASH:

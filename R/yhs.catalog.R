@@ -5,7 +5,7 @@
 #' 
 #' @importFrom magrittr %>%
 #' @importFrom dplyr as.tbl
-#' @importFrom utils head tail
+#' @importFrom utils head tail data
 #' @docType package
 #' @author A.J. Barbour
 #' @name yhs.catalog
@@ -77,7 +77,7 @@ NULL
 #' plot(Lat.deg ~ Lon.deg, yhs, pch=".")
 #' 
 #' # highlight the supplemental catalog in red
-#' plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(src)))
+#' plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(Source)))
 NULL
 
 #' @title Salton Sea polygon
