@@ -24,8 +24,11 @@ require(dplyr)
 print(yhs)
 
 # source and quality distribution
-print(tbl <- with(yhs, table(src, Quality)))
+print(tbl <- with(yhs, table(Source, Quality)))
 plot(tbl)
+
+print(tbl2 <- with(yhs, table(Year, Quality)))
+plot(tbl2)
 
 # plot all locations in space
 plot(Lat.deg ~ Lon.deg, yhs, pch=".")
