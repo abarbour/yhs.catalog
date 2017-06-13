@@ -15,7 +15,8 @@ library(viridis)
 
 calif <- ggplot2::map_data("state", region = 'california')
 
-yhs %>% dplyr::arrange(Year, Mw) -> yhss
+dplyr::filter(yhs, Mw >= 3) %>% 
+  dplyr::arrange(Year, Mw) -> yhss
 
 p <- ggplot(yhss, aes(x=Lon.deg, y=Lat.deg)) + 
       geom_path(data=calif, aes(x=long, y=lat, group = group), colour="grey")+
@@ -24,7 +25,7 @@ p <- ggplot(yhss, aes(x=Lon.deg, y=Lat.deg)) +
 			coord_quickmap() + 
 			facet_wrap(~Year) + 
       #scale_colour_gradientn(colours=(topo.colors(4)))+
-      scale_colour_gradientn(colours=rev(plasma(7)))+
+      scale_colour_gradientn(colours=rev(viridis::magma(7)))+
 			theme_minimal() +
 			theme(axis.text = element_text(size=7),
 				  axis.title = element_text(size=10, hjust=0),
@@ -40,4 +41,4 @@ p <- ggplot(yhss, aes(x=Lon.deg, y=Lat.deg)) +
 			
 ggsave("years.png", p, width=7.0, height=8.0, dpi=450)
 
-print(p)
+#print(p)
