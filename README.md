@@ -28,7 +28,7 @@ Inspect the data:
 Tabulate classifications:
 
     with(yhs,{
-    	Tsr <- table(Source, Quality)
+        Tsr <- table(Source, Quality)
 	Tyr <- table(Year, Quality)
     })
     plot(Tsr)
