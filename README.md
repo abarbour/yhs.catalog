@@ -27,7 +27,12 @@ Inspect the data:
     
 Tabulate classifications:
 
-    with(yhs, table(src, Quality))
+    with(yhs,{
+    	Tsr <- table(Source, Quality)
+	Tyr <- table(Year, Quality)
+    })
+    plot(Tsr)
+    plot(Tyr)
 
 Plot in spatial coordinates by year:
 
