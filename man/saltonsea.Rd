@@ -31,3 +31,4 @@ For more information on the Salton Sea:
 \seealso{
 \code{\link{yhs.catalog}}
 }
+

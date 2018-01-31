@@ -3,10 +3,9 @@
 \docType{package}
 \name{yhs.catalog}
 \alias{yhs.catalog}
+\alias{yhs.catalog-package}
 \alias{ysh.catalog}
-\alias{yhs.catalog-package}
 \alias{ysh.catalog-package}
-\alias{yhs.catalog-package}
 \title{Refined earthquake focal mechanism catalog for southern California}
 \description{
 Provides access to the Yang, Hauksson, and Shearer (2012) catalog
@@ -18,6 +17,9 @@ str(yhs)
 
 # plot all locations in space
 plot(Lat.deg ~ Lon.deg, yhs, pch=".")
+}
+\author{
+A.J. Barbour
 }
 \references{
 Yang, W., E. Hauksson and P. M. Shearer, 
@@ -34,6 +36,4 @@ Bull. Seismol. Soc. Am., 102(5), 2012.
 \seealso{
 \code{\link{yhs}}
 }
-\author{
-A.J. Barbour
-}
+
