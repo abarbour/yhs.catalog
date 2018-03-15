@@ -30,14 +30,19 @@ message('  forming full table...')
 dplyr::bind_rows(yhsl) %>%
 	dplyr::arrange(CID) %>% 
 	unique %>%
-	dplyr::mutate(DateTime = ISOdatetime(Year, Month, Day, Hour, pmax(0, Minute), pmax(0, Second), tz='UTC')) %>%
+	dplyr::mutate(CID = as.character(CID),
+		DateTime = ISOdatetime(Year, Month, Day, Hour, pmax(0, Minute), pmax(0, Second), tz='UTC')) %>%
 	dplyr::arrange(DateTime, CID) -> yhs
 
 attr(yhs, 'yhs_assembly') <- list(Date=Sys.time(), SI=sessionInfo())
 
+
+yhs
+summary(yhs)
+
 message('  checking for full table normalization...')
 
-yhs %>% group_by(CID) %>% summarize(N=n()) %>% filter(N>1) -> nonunique
+yhs %>% dplyr::group_by(CID) %>% dplyr::summarize(N=n()) %>% dplyr::filter(N>1) -> nonunique
 if (nrow(nonunique)>0){
 	print(as.data.frame(nonunique))
 } else {

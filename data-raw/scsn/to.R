@@ -57,8 +57,8 @@ fi <- 'catalog_current.fwf.gz'
 #         le = SCSN flag for event type (le=local, qb=quarry, re=regional)
 #         ct = for location method (ct=cross-correlation; 3d=3d velocity model; xx= not relocated, SCSN location used)
 #       Poly5= the polygon where the earthquake is located.  We used 5 polygons to
-nms <- c('year','month','day','hour','minute','second',
-	'CID','lat','lon', 'depth.km', 'mag', 
+nms <- c('Year','Month','Day','Hour','Minute','Second',
+	'CID','Lat.deg','Lon.deg', 'Dep.km', 'Mag', 
 	'n.picks', 'nearest.km', 'rms',
 	'nighttime', 'locmeth1', 
 	'clustid', 'n.clust', 'n.difft', 
@@ -68,12 +68,12 @@ nms <- c('year','month','day','hour','minute','second',
 readr::read_fwf(fi, readr::fwf_empty(fi, col_names=nms)) -> scsn.o
 
 scsn.o %>% dplyr::mutate(
-	month = as.numeric(month),
-	day = as.numeric(day),
-	hour = as.numeric(hour),
-	minute = abs(as.numeric(minute)),
-	minute = ifelse(minute==60, 59, minute),
-	second = as.numeric(second),
+	Month = as.numeric(Month),
+	Day = as.numeric(Day),
+	Hour = as.numeric(Hour),
+	Minute = abs(as.numeric(Minute)),
+	Minute = ifelse(Minute==60, 59, Minute),
+	Second = as.numeric(Second),
 	CID = as.character(CID),
 	nighttime = as.logical(nighttime),
 	n.difft = as.integer(n.difft),
@@ -82,9 +82,10 @@ scsn.o %>% dplyr::mutate(
 	type = factor(type),
 	locmeth2 = factor(locmeth2),
 	polyg = factor(polyg),
-	DateTime = ISOdatetime(year, month, day, hour, minute, second, tz='UTC')
-) %>% dplyr::arrange(DateTime, CID) -> scsn
+	DateTime = ISOdatetime(Year, Month, Day, Hour, Minute, Second, tz='UTC')
+) %>% dplyr::arrange(CID) -> scsn_
 
+scsn_ %>% unique %>% dplyr::arrange(DateTime, CID) -> scsn
 
 attr(scsn, 'scsn_assembly') <- list(Date=Sys.time(), SI=sessionInfo())
 
