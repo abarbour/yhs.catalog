@@ -54,12 +54,12 @@ NULL
 #' @references (1) Hardebeck, Jeanne L. and Peter M. Shearer, 
 #' A new method for determining first-motion focal mechanisms, 
 #' Bull. Seismol. Soc. Am., 92(6), 2002.
-#' \url{http://dx.doi.org/10.1785/0120010200}
+#' \url{https://doi.org/10.1785/0120010200}
 #' 
 #' @references (2) Hardebeck, Jeanne L. and Peter M. Shearer, 
 #' Using S/P Amplitude Ratios to Constrain the Focal Mechanisms of Small Earthquakes, 
 #' Bull. Seismol. Soc. Am., 93(6), 2003.
-#' \url{http://dx.doi.org/10.1785/0120020236}
+#' \url{https://doi.org/10.1785/0120020236}
 #' 
 #' @seealso \code{\link{yhs.catalog}}
 #' @examples
@@ -78,6 +78,17 @@ NULL
 #' 
 #' # highlight the supplemental catalog in red
 #' plot(Lat.deg ~ Lon.deg, yhs, pch=".", col=as.numeric(factor(Source)))
+NULL
+
+#' @title SCSN relocated catalog
+#' @description relocated catalog published by the SCSN
+#' @details this is different from the \code{\link{yhs}} catalog
+#' in that there are no details of focal planes; hence, this catalog
+#' will have many more events that the aforementioned catalog.
+#' @docType data
+#' @name scsn
+#' @format similar to \code{\link{yhs}} but with other details on
+#' the relocation details instead of focal planes
 NULL
 
 #' @title Salton Sea polygon
