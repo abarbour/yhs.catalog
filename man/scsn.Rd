@@ -14,3 +14,6 @@ this is different from the \code{\link{yhs}} catalog
 in that there are no details of focal planes; hence, this catalog
 will have many more events that the aforementioned catalog.
 }
+\references{
+\url{http://scedc.caltech.edu/research-tools/alt-2011-dd-hauksson-yang-shearer.html}
+}

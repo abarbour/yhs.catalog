@@ -87,6 +87,7 @@ NULL
 #' will have many more events that the aforementioned catalog.
 #' @docType data
 #' @name scsn
+#' @references \url{http://scedc.caltech.edu/research-tools/alt-2011-dd-hauksson-yang-shearer.html}
 #' @format similar to \code{\link{yhs}} but with other details on
 #' the relocation details instead of focal planes
 NULL
