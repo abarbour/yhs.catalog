@@ -6,7 +6,6 @@
 \alias{ysh.catalog}
 \alias{yhs.catalog-package}
 \alias{ysh.catalog-package}
-\alias{yhs.catalog-package}
 \title{Refined earthquake focal mechanism catalog for southern California}
 \description{
 Provides access to the Yang, Hauksson, and Shearer (2012) catalog

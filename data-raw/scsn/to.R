@@ -8,7 +8,7 @@
 #	on 
 #		2018:073 (14-March)
 #
-#	[ What this script does, broadly ]
+#	[ Loads the SCSN catalog, prepares it, and saves it to R-binary ]
 #
 ###
 
@@ -64,45 +64,65 @@ nms <- c('Year','Month','Day','Hour','Minute','Second',
 	'clustid', 'n.clust', 'n.difft', 
 	'h.err.km', 'z.err.km', 'rel.h.err', 'rel.z.err',
 	'type', 'locmeth2', 'polyg')
-	
-readr::read_fwf(fi, readr::fwf_empty(fi, col_names=nms)) -> scsn.o
 
-scsn.o %>% dplyr::mutate(
-	Month = as.numeric(Month),
-	Day = as.numeric(Day),
-	Hour = as.numeric(Hour),
-	Minute = abs(as.numeric(Minute)),
-	Minute = ifelse(Minute==60, 59, Minute),
-	Second = as.numeric(Second),
-	CID = as.character(CID),
-	nighttime = as.logical(nighttime),
-	n.difft = as.integer(n.difft),
-	rms = ifelse(rms==99, NA, rms),
-	locmeth1 = factor(locmeth1),
-	type = factor(type),
-	locmeth2 = factor(locmeth2),
-	polyg = factor(polyg),
-	DateTime = ISOdatetime(Year, Month, Day, Hour, Minute, Second, tz='UTC')
-) %>% dplyr::arrange(CID) -> scsn_
+if (!exists('scsn.o') | !inter) readr::read_fwf(fi, readr::fwf_empty(fi, col_names=nms)) -> scsn.o
 
-scsn_ %>% unique %>% dplyr::arrange(DateTime, CID) -> scsn
+redo.proc <- FALSE
+if (!exists('scsn_') | !exists('scsn_arr') | redo.proc){
+  scsn.o %>% dplyr::mutate(
+    Month = as.numeric(Month),
+    Day = as.numeric(Day),
+    Hour = as.numeric(Hour),
+    Minute = abs(as.numeric(Minute)),
+    Minute = ifelse(Minute==60, 59, Minute),
+    Second = as.numeric(Second),
+    CID = as.character(CID),
+    nighttime = as.logical(trimws(nighttime)),
+    n.difft = as.integer(n.difft),
+    rms = ifelse(rms==99, NA, rms),
+    locmeth1 = factor(locmeth1),
+    type = factor(type),
+    locmeth2 = factor(locmeth2),
+    polyg = factor(polyg),
+    DateTime = ISOdatetime(Year, Month, Day, Hour, Minute, Second, tz='UTC')
+  ) %>% dplyr::arrange(CID) -> scsn_
+  
+  scsn_ %>% unique %>% dplyr::arrange(DateTime, CID) -> scsn_arr
+  
+  attr(scsn_arr, 'scsn_assembly') <- list(Date=Sys.time(), SI=sessionInfo())
+}
 
-attr(scsn, 'scsn_assembly') <- list(Date=Sys.time(), SI=sessionInfo())
+scsn_arr	
+summary(scsn_arr)
 
-scsn	
-summary(scsn)
+scsn_arr %>% dplyr::group_by(CID) %>% dplyr::summarize(N=n()) %>% dplyr::filter(N>1) -> nonunique
 
-scsn %>% group_by(CID) %>% summarize(N=n()) %>% dplyr::filter(N>1) -> nonunique
-if (nrow(nonunique)>0){
-	print(as.data.frame(nonunique))
+scsn <- if (nrow(nonunique)>0){
+  warning("  --> Does NOT check OK! -- stripping out duplicates:", immediate. = TRUE)
+  print(as.data.frame(nonunique))
+  dupes. <- nonunique$CID
+  scsn_arr %>% dplyr::filter(!(!is.na(rms) & (CID %in% dupes.))) -> scsn_arr2
+  #scsn_arr2 %>% dplyr::group_by(CID) %>% dplyr::summarize(N=n()) %>% dplyr::filter(N>1) -> nonunique2
+  scsn_arr2
 } else {
 	message('  --> checks OK')
+  scsn_arr
+}
+
+if (!all.equal(nrow(nonunique) + nrow(scsn) - nrow(scsn_arr), 0)){
+  stop('Something went awry trying to remove duplicates... Check manually')
+} else {
+  message("(stripping duplicates succeeded...)")
 }
 
 #+++++++++++
 
-rdafi <- 'scsn.rda'
-message('Saving ', rdafi, '...')
-save(scsn, file=rdafi, compress='xz')
-message("Done.")
-
+force.save <- TRUE
+if (!inter | force.save){
+  rdafi <- 'scsn.rda'
+  message('Saving ', rdafi, '...')
+  save(scsn, file=rdafi, compress='xz')
+  message("Done.")
+} else {
+  warning("Interactive mode -- no saving for speed purposes")
+}
