@@ -4,7 +4,9 @@
 \name{saltonsea}
 \alias{saltonsea}
 \title{Salton Sea polygon}
-\format{\code{'data.frame'}: latitudes and longitudes outlining the shoreline}
+\format{
+\code{'data.frame'}: latitudes and longitudes outlining the shoreline
+}
 \source{
 Digitized from Google-maps in Feb-2015 with \url{http://www.birdtheme.org/useful/v3largemap.html}
 }

@@ -4,8 +4,10 @@
 \name{scsn}
 \alias{scsn}
 \title{SCSN relocated catalog}
-\format{similar to \code{\link{yhs}} but with other details on
-the relocation details instead of focal planes}
+\format{
+similar to \code{\link{yhs}} but with other details on
+the relocation details instead of focal planes
+}
 \description{
 relocated catalog published by the SCSN
 }
