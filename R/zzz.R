@@ -6,6 +6,6 @@
   msg <- 'refined focal mechanism catalog for southern California'
   packageStartupMessage(
     sprintf("Loaded %s (%s) -- %s\nNotes: 1. %s\n       2. start with `data(yhs)`",
-        pack, packv, msg, paste("* sub-version number shows last catalog update (", packvp, ')'))
+        pack, packv, msg, paste("sub-version number shows last catalog update (", packvp, ')'))
   )
 }
