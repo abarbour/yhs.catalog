@@ -100,7 +100,7 @@ if (!exists('scsn_') | !exists('scsn_arr') | redo.proc){
 #     Minute = abs(as.numeric(Minute)),
 #     Minute = ifelse(Minute==60, 59, Minute),
 #     Second = as.numeric(Second),
-#     CID = as.character(CID),
+     CID = as.character(CID),
 #     nighttime = as.logical(trimws(nighttime)),
 #     n.difft = as.integer(n.difft),
 #     rms = ifelse(rms==99, NA, rms),

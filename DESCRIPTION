@@ -2,15 +2,16 @@ Package: yhs.catalog
 Type: Package
 Title: Yang, Hauksson, and Shearer (2012) Refined Focal Mechanism Catalog for
     Southern California
-Version: 1.4-20220320
-Date: 2022-03-20
+Version: 1.4-20220321
+Date: 2022-03-21
 Author: Andrew J Barbour
 Maintainer: Andrew J Barbour <andy.barbour@gmail.com>
 Description: Provides access to the Hauksson-Yang-Shearer
     relocated earthquake catalog, and the Yang-Hauksson-Shearer relocated focal
     mechanism catalog for southern California, provided by the Southern California
-    Earthquake Center; the SCEC database supplements the original journal article,
-    and this package will updated as the database is updated.
+    Earthquake Cente (SCEC); the SCEC database supplements the original journal article
+    with routing updates,
+    and this package will updated accordingly.
 License: GPL-3
 LazyData: true
 Depends:
@@ -24,9 +25,9 @@ Suggests:
     testthat,
     viridis
 URL: https://github.com/abarbour/yhs.catalog, SCEC databases: 
-    http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
+    https://scedc.caltech.edu/data/alt-2011-yang-hauksson-shearer.html
     (foc mechs)
-    http://scedc.caltech.edu/research-tools/alt-2011-dd-hauksson-yang-shearer.html
+    https://scedc.caltech.edu/data/alt-2011-dd-hauksson-yang-shearer.html
     (double-difference relocations only)
 BugReports: https://github.com/abarbour/yhs.catalog/issues
 RoxygenNote: 7.1.2
