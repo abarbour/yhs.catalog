@@ -11,7 +11,7 @@
 Digitized from Google-maps in Feb-2015 with \url{http://www.birdtheme.org/useful/v3largemap.html}
 }
 \description{
-Coordinates of the current Salton Sea shoreline
+Coordinates of a recent Salton Sea shoreline
 }
 \details{
 The first and last coordinates are equal, which means this can be treated as a polygon.

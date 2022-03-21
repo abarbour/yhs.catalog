@@ -47,7 +47,7 @@ NULL
 #' 196993 obs. of  22 variables in the HASH format: 
 #' 179255 earthquakes from the original catalog, and 17738 from the supplemental catalogs.
 #' 
-#' @source SCEC: \url{http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html}
+#' @source SCEC: \url{https://scedc.caltech.edu/data/alt-2011-yang-hauksson-shearer.html}
 #' 
 #' @references HASH:
 #' 
@@ -87,14 +87,30 @@ NULL
 #' will have many more events that the aforementioned catalog.
 #' @docType data
 #' @name scsn
-#' @references \url{http://scedc.caltech.edu/research-tools/alt-2011-dd-hauksson-yang-shearer.html}
+#'
+#' @source \url{https://scedc.caltech.edu/data/alt-2011-dd-hauksson-yang-shearer.html}
+#' 
+#' @references 
+#' 
+#' Hauksson, E., Shearer, P. M., & Yang, W. (2012). Waveform Relocated Earthquake Catalog for Southern
+#' California (1981 to June 2011). Bull. Seismol. Soc. Am, 102(5), 2239–2244.
+#' \doi{10.1785/0120120010}
+#' 
+#' Trugman, D. T., and P. M. Shearer (2017). GrowClust: A Hierarchical 
+#' Clustering Algorithm for Relative Earthquake Relocation, with 
+#' Application to the Spanish Springs and Sheldon, Nevada, Earthquake
+#' Sequences, Seismol. Res. Lett. , 88 (2A), 379–391, 
+#' \doi{10.1785/0220160188}
+#' 
 #' @format similar to \code{\link{yhs}} but with other details on
-#' the relocation details instead of focal planes
+#' the relocation details instead of focal planes; specifically, in
+#' the Growclust 'relocated catalog' format (Trugman and Shearer, 2017)
+#' 
 NULL
 
 #' @title Salton Sea polygon
 #' 
-#' @description Coordinates of the current Salton Sea shoreline
+#' @description Coordinates of a recent Salton Sea shoreline
 #' 
 #' @details The first and last coordinates are equal, which means this can be treated as a polygon.
 #' 

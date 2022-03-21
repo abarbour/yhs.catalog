@@ -11,7 +11,7 @@ Classes \code{'tbl_df'}, \code{'tbl'} and \code{'data.frame'}:
 179255 earthquakes from the original catalog, and 17738 from the supplemental catalogs.
 }
 \source{
-SCEC: \url{http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html}
+SCEC: \url{https://scedc.caltech.edu/data/alt-2011-yang-hauksson-shearer.html}
 }
 \description{
 This is the dataset containing the earthquake catalog.

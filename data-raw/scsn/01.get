@@ -1,6 +1,15 @@
 #!/bin/sh
 set -e
-#wget -O catalog_format http://scedc.caltech.edu/ftp/catalogs/hauksson/Socal_DD/hs_1981_2011_catalog_v01.format
-#wget -O catalog_current.fwf http://scedc.caltech.edu/ftp/catalogs/hauksson/Socal_DD/hs_1981_2016_comb_K4_A.cat_so_SCSN_v2q
-wget -O catalog_current.fwf http://scedc.caltech.edu/ftp/catalogs/hauksson/Socal_DD/hs_1981_all_comb_K4_A.cat_so_SCSN_v01a
-gzip -f catalog_current.fwf
+
+# Double Difference
+DDCAT=catalog_current.fwf
+#wget -O catalog_current.fwf https://scedc.caltech.edu/ftp/catalogs/hauksson/Socal_DD/hs_1981_2016_comb_K4_A.cat_so_SCSN_v2q (through 2016)
+#wget -O catalog_current.fwf https://scedc.caltech.edu/ftp/catalogs/hauksson/Socal_DD/hs_1981_all_comb_K4_A.cat_so_SCSN_v01a (through 2017)
+wget -O ${DDCAT} https://service.scedc.caltech.edu/ftp/catalogs/hauksson/Socal_DD/sc_1981_2019_1d_3d_gc_soda_noqb_v0.gc
+gzip -f ${DDCAT}
+
+# QTM 12 MAD
+QCAT=qtm_current_12dev.fwf
+#YEAR MONTH DAY HOUR MINUTE SECOND EVENTID LATITUDE LONGITUDE DEPTH MAGNITUDE MAGP5 MAGP95 TEMPLATEID STACKCC MAD RELOCATED?
+wget -O ${QCAT} https://service.scedc.caltech.edu/ftp/QTMcatalog/qtm_final_12dev.hypo
+gzip -f ${QCAT}

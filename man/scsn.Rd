@@ -6,7 +6,11 @@
 \title{SCSN relocated catalog}
 \format{
 similar to \code{\link{yhs}} but with other details on
-the relocation details instead of focal planes
+the relocation details instead of focal planes; specifically, in
+the Growclust 'relocated catalog' format (Trugman and Shearer, 2017)
+}
+\source{
+\url{https://scedc.caltech.edu/data/alt-2011-dd-hauksson-yang-shearer.html}
 }
 \description{
 relocated catalog published by the SCSN
@@ -17,5 +21,13 @@ in that there are no details of focal planes; hence, this catalog
 will have many more events that the aforementioned catalog.
 }
 \references{
-\url{http://scedc.caltech.edu/research-tools/alt-2011-dd-hauksson-yang-shearer.html}
+Hauksson, E., Shearer, P. M., & Yang, W. (2012). Waveform Relocated Earthquake Catalog for Southern
+California (1981 to June 2011). Bull. Seismol. Soc. Am, 102(5), 2239–2244.
+\doi{10.1785/0120120010}
+
+Trugman, D. T., and P. M. Shearer (2017). GrowClust: A Hierarchical 
+Clustering Algorithm for Relative Earthquake Relocation, with 
+Application to the Spanish Springs and Sheldon, Nevada, Earthquake
+Sequences, Seismol. Res. Lett. , 88 (2A), 379–391, 
+\doi{10.1785/0220160188}
 }
