@@ -20,10 +20,12 @@ cat << XX
 #	focal mechanism solution to both the P-wave first motion records that were 
 #	picked by network analysts, and the S/P amplitude ratios computed from 
 #	three-component seismograms. This dataset includes around 179,000 focal 
-#	mechanisms for earthquakes occurring 1981 through 2010 in southern California region.
+#	mechanisms for earthquakes occurring 1981 through 2010 in southern
+#	California region. Updated datasets for 2011-2019 have been added
+#	below.
 #
 #	source:
-#		http://scedc.caltech.edu/research-tools/alt-2011-yang-hauksson-shearer.html
+#		https://scedc.caltech.edu/data/alt-2011-yang-hauksson-shearer.html
 #
 #	REFERENCES:
 #
